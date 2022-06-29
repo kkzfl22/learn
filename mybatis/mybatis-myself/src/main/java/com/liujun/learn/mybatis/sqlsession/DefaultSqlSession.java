@@ -26,13 +26,10 @@ public class DefaultSqlSession implements SqlSession {
 
   @Override
   public <T> List<T> selectList(String statementId, Object... param) {
-
     // 找到SQL配制对象
     MapperStatement mapperStatement = configuration.getStatementMap().get(statementId);
-
     // 构建SQL执行器对象
     Executeor executeor = new SimpleExecutor();
-
     return executeor.query(configuration, mapperStatement, param);
   }
 
@@ -40,7 +37,6 @@ public class DefaultSqlSession implements SqlSession {
   public <T> T selectOne(String statementId, Object... param) {
     // 找到SQL配制对象
     MapperStatement mapperStatement = configuration.getStatementMap().get(statementId);
-
     // 构建SQL执行器对象
     Executeor executeor = new SimpleExecutor();
     List<T> list = executeor.query(configuration, mapperStatement, param);
@@ -48,11 +44,9 @@ public class DefaultSqlSession implements SqlSession {
     if (null == list || list.isEmpty()) {
       return null;
     }
-
     if (list.size() > 1) {
       throw new IllegalArgumentException("result more 0");
     }
-
     return list.get(0);
   }
 

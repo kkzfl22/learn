@@ -104,9 +104,5 @@ public class TestUserMsg {
         userDelete.setName("name4");
         int deleteRsp = userMapper.delete(userDelete);
         Assertions.assertEquals(1, updateRsp);
-
-
     }
-
-
 }

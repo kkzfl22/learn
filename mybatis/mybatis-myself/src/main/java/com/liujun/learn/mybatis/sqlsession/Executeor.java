@@ -33,5 +33,4 @@ public interface Executeor {
      * @return 影响的行数
      */
     int update(MyBatisConfiguration config, MapperStatement statement, Object... param);
-
 }

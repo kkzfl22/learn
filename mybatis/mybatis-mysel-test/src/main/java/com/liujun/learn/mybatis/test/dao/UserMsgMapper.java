@@ -11,14 +11,12 @@ import java.util.List;
  * @since 2022/6/29
  */
 public interface UserMsgMapper {
-
     /**
      * 查询所有用户信息
      *
      * @return
      */
     List<UserMsgPO> findAllUser();
-
     /**
      * 按条件查询单个用户的信息
      *
@@ -26,8 +24,6 @@ public interface UserMsgMapper {
      * @return 结果集
      */
     UserMsgPO findOne(UserMsgPO userQuery);
-
-
     /**
      * 添加数据
      *
@@ -35,8 +31,6 @@ public interface UserMsgMapper {
      * @return
      */
     int insert(UserMsgPO user);
-
-
     /**
      * 修改数据
      *
@@ -44,8 +38,6 @@ public interface UserMsgMapper {
      * @return
      */
     int update(UserMsgPO user);
-
-
     /**
      * 删除数据
      *

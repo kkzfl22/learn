@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <mapper namespace="com.liujun.learn.mybatis.test.dao.UserMsgMapper">
-
     <select id="findAllUser" type="com.liujun.learn.mybatis.test.bean.UserMsgPO"
             resultType="com.liujun.learn.mybatis.test.bean.UserMsgPO">
         select * from user_msg
     </select>
-
     <select id="findOne" type="com.liujun.learn.mybatis.test.bean.UserMsgPO"
             resultType="com.liujun.learn.mybatis.test.bean.UserMsgPO">
         select * from user_msg where id = #{id} and name=#{name}
     </select>
-
-
     <insert id="insert" type="com.liujun.learn.mybatis.test.bean.UserMsgPO">
         insert into user_msg(id,name)
         values(#{id},#{name})
     </insert>
-
-
-
     <update id="update" type="com.liujun.learn.mybatis.test.bean.UserMsgPO">
         update user_msg
         set name = #{name}
         where id = #{id}
     </update>
-
-
     <delete id="delete" type="com.liujun.learn.mybatis.test.bean.UserMsgPO">
         delete from user_msg where id = #{id}
     </delete>
-
 </mapper>
