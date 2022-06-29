@@ -12,18 +12,45 @@ import java.util.List;
  */
 public interface UserMsgMapper {
 
-  /**
-   * 查询所有用户信息
-   *
-   * @return
-   */
-  List<UserMsgPO> findAllUser();
+    /**
+     * 查询所有用户信息
+     *
+     * @return
+     */
+    List<UserMsgPO> findAllUser();
 
-  /**
-   * 按条件查询单个用户的信息
-   *
-   * @param userQuery 用户的信息
-   * @return 结果集
-   */
-  UserMsgPO findOne(UserMsgPO userQuery);
+    /**
+     * 按条件查询单个用户的信息
+     *
+     * @param userQuery 用户的信息
+     * @return 结果集
+     */
+    UserMsgPO findOne(UserMsgPO userQuery);
+
+
+    /**
+     * 添加数据
+     *
+     * @param user
+     * @return
+     */
+    int insert(UserMsgPO user);
+
+
+    /**
+     * 修改数据
+     *
+     * @param user
+     * @return
+     */
+    int update(UserMsgPO user);
+
+
+    /**
+     * 删除数据
+     *
+     * @param user
+     * @return
+     */
+    int delete(UserMsgPO user);
 }

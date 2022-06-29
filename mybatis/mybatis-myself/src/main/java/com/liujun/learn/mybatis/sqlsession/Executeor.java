@@ -13,14 +13,25 @@ import java.util.List;
  */
 public interface Executeor {
 
-  /**
-   * 通用的查询的接口
-   *
-   * @param config 配制的信息
-   * @param statement 当前所有运行的SQL对象
-   * @param param 运行的参数信息
-   * @param <E> 查询的结果集对象
-   * @return 查询的结果集
-   */
-  <E> List<E> query(MyBatisConfiguration config, MapperStatement statement, Object... param);
+    /**
+     * 通用的查询的接口
+     *
+     * @param config    配制的信息
+     * @param statement 当前所有运行的SQL对象
+     * @param param     运行的参数信息
+     * @param <E>       查询的结果集对象
+     * @return 查询的结果集
+     */
+    <E> List<E> query(MyBatisConfiguration config, MapperStatement statement, Object... param);
+
+    /**
+     * 执行数据库的增删改操作
+     *
+     * @param config    配制信息
+     * @param statement 操作信息
+     * @param param     参数信息
+     * @return 影响的行数
+     */
+    int update(MyBatisConfiguration config, MapperStatement statement, Object... param);
+
 }

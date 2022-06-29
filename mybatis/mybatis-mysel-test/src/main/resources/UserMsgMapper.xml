@@ -13,4 +13,22 @@
     </select>
 
 
+    <insert id="insert" type="com.liujun.learn.mybatis.test.bean.UserMsgPO">
+        insert into user_msg(id,name)
+        values(#{id},#{name})
+    </insert>
+
+
+
+    <update id="update" type="com.liujun.learn.mybatis.test.bean.UserMsgPO">
+        update user_msg
+        set name = #{name}
+        where id = #{id}
+    </update>
+
+
+    <delete id="delete" type="com.liujun.learn.mybatis.test.bean.UserMsgPO">
+        delete from user_msg where id = #{id}
+    </delete>
+
 </mapper>
