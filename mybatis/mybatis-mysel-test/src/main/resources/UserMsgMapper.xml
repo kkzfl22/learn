@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mapper namespace="com.liujun.learn.mybatis.test.dao.UserMsgMapper">
+
+    <select id="findAllUser" type="com.liujun.learn.mybatis.test.bean.UserMsgPO"
+            resultType="com.liujun.learn.mybatis.test.bean.UserMsgPO">
+        select * from user_msg
+    </select>
+
+    <select id="findOne" type="com.liujun.learn.mybatis.test.bean.UserMsgPO"
+            resultType="com.liujun.learn.mybatis.test.bean.UserMsgPO">
+        select * from user_msg where id = #{id} and name=#{name}
+    </select>
+
+
+</mapper>

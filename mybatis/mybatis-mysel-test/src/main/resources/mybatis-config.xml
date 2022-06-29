@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mybatis-config>
+    <dataSource>
+        <property name="driver-class-name" value="org.sqlite.JDBC"></property>
+        <property name="url" value="jdbc:sqlite:mybatis.db"></property>
+        <property name="username" value=""></property>
+        <property name="password" value=""></property>
+    </dataSource>
+
+    <import resource="UserMsgMapper.xml" ></import>
+</mybatis-config>
