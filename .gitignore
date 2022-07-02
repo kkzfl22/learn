@@ -5,3 +5,11 @@
 /mybatis/mybatis-mysel-test/mybatis-mysel-test.iml
 /mybatis/mybatis-use/mybatis-use.iml
 /mybatis/mybatis-use/.idea
+/mybatis/mybatis-aliase-use/target/
+/mybatis/mybatis-aliase-use/.idea
+/mybatis/mybatis-label-use/target/
+/mybatis/mybatis-query-link-use/target/
+/mybatis/mybatis-proxy-use/target/
+/mybatis/mybatis-use/target/
+/mybatis/mybatis-proxy-use
+/mybatis/db/*.db
