@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liujun.learn.mybatis.mapper.UserMsgMapper">
+
+    <insert id="insertUser" parameterType="usermsgpo">
+        insert into user_msg(id,name)
+        values(#{id},#{name})
+    </insert>
+
+    <update id="updateUser" parameterType="usermsgpo">
+        update user_msg
+        set name=#{name}
+        where id = #{id}
+    </update>
+
+    <!--当参数仅一个时，占位符中的标识名，可以写任意的名称-->
+    <!--mybatis同时也内置了一些别名,int,string,long-->
+    <delete id="deleteUser" parameterType="int">
+        delete from user_msg where id = #{abc}
+    </delete>
+
+    <select id="selectAll" resultType="usermsgpo">
+        select * from user_msg
+    </select>
+
+    <select id="selectOne" parameterType="usermsgpo"
+            resultType="usermsgpo">
+        select * from user_msg where id = #{id}
+    </select>
+</mapper>

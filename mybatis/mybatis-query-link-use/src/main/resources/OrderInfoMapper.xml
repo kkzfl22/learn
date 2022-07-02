@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liujun.learn.mybatis.mapper.OrderInfoMapper">
+
+    <resultMap id="orderMap" type="com.liujun.learn.mybatis.po.OrderPO">
+        <result property="id" column="id"/>
+        <result property="money" column="money"/>
+        <result property="orderTime" column="orderTime"/>
+        <result property="userid" column="user_id"/>
+
+        <association property="user" javaType="com.liujun.learn.mybatis.po.UserMsgPO">
+            <result property="id" column="user_id" />
+            <result property="name" column="name" />
+        </association>
+    </resultMap>
+
+
+    <select id="selecOrderAndUser" parameterType="int"
+            resultMap="orderMap">
+        select * from order_info o left join user_msg u on o.user_id = u.id where o.id = #{id}
+    </select>
+</mapper>

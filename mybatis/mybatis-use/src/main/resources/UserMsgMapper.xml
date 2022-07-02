@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMsg">
+    <select id="selectAll" resultType="com.liujun.learn.mybatis.com.liujun.learn.mybatis.po.UserMsgPO">
+        select * from user_msg
+    </select>
+
+
+    <insert id="insertValue" parameterType="com.liujun.learn.mybatis.com.liujun.learn.mybatis.po.UserMsgPO">
+        insert into user_msg(id,name)
+        values(#{id},#{name})
+    </insert>
+
+    <update id="update" parameterType="com.liujun.learn.mybatis.com.liujun.learn.mybatis.po.UserMsgPO">
+        update user_msg
+        set name=#{name}
+        where id = #{id}
+    </update>
+
+
+    <!--当参数仅一个时，占位符中的标识名，可以写任意的名称-->
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from user_msg where id = #{abc}
+    </delete>
+</mapper>

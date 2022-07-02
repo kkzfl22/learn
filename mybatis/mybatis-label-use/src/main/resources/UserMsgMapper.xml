@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liujun.learn.mybatis.mapper.UserMsgMapper">
+
+    <select id="selectOne" parameterType="com.liujun.learn.mybatis.po.UserMsgPO"
+            resultType="com.liujun.learn.mybatis.po.UserMsgPO">
+        select * from user_msg
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectForcach" parameterType="list"
+            resultType="com.liujun.learn.mybatis.po.UserMsgPO">
+        select * from user_msg
+        <where>
+            <foreach collection="list" open="id in (" close=")" separator="," item="id">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+
+    <select id="selectForcachArray" parameterType="list"
+            resultType="com.liujun.learn.mybatis.po.UserMsgPO">
+        select * from user_msg
+        <where>
+            <foreach collection="array" open="id in (" close=")" separator="," item="id">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+
+</mapper>

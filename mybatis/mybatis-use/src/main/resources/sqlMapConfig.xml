@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="default">
+        <environment id="default">
+            <!--JDBC表示把数据库的事务交给JDBC进行管理。 MANAGER让容器进行管理，很少使用，它从来不提交回滚一个连接。-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--POOLED使用mybatis的连接池，UNPOOLED表示不使用连接池,每次使用数据库时才打开和关闭连接，JNDI,使用容器配制的数据源。-->
+            <dataSource type="POOLED">
+                <property name="driver" value="org.sqlite.JDBC"/>
+                <property name="url" value="jdbc:sqlite:../db/mybatis.db"/>
+                <property name="username" value=""/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--
+        mapper的配制包括4种：
+        1. 使用相对路径的资源引用,如:<mapper resource="UserMsgMapper.xml"/>
+        2. 使用完全限定资源定位符（URL），例如：<mapper url="file:///D:\java\workspace\selfwork\mybatis\mybatis-use\src\main\resources\UserMsgMapper.xml" />
+        3. 使用映射器接口实现类的完全限定类名，例如： <mapper class="com.liujun.learn.mybatis.com.liujun.learn.mybatis.po.UserMsgPO"/>
+        4. 将包内的映射器接口实现全部注册为映射器，例如：<package name="com.liujun.learn.mybatis.po"/>
+        -->
+        <mapper resource="UserMsgMapper.xml"/>
+
+    </mappers>
+</configuration>
